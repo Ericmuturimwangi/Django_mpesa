@@ -1,6 +1,7 @@
 
 
 from pathlib import Path
+from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -15,8 +16,11 @@ SECRET_KEY = 'django-insecure-+5eqoe^r!b53tqn451j7*i%-(^nkdrlm)t#28(rnsc-g_e95*v
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = [
+    'localhost',
+    '127.0.0.1',
+    'f2c8-154-159-237-129.ngrok-free.app',  
+]
 
 # Application definition
 
@@ -30,6 +34,14 @@ INSTALLED_APPS = [
     'mpesa_daraja',
     'django_daraja',
 ]
+MPESA_ENVIRONMENT = 'sandbox'
+MPESA_CONSUMER_KEY = "oFN3bLPYa0NVoSX7vWlDaFzsnBEGVHUh9lVwc7qCfQ9Ggz0d"
+MPESA_CONSUMER_SECRET = "r4AFnR3rL9CT6GvoAr2EIK4yQr4TUjtCJ7xC4TN5Aazbc3gArO4xGUiff0B27GgM"
+MPESA_EXPRESS_SHORTCODE = "TRANSACTION SUCCESS"
+MPESA_SHORTCODE = 174379
+MPESA_PASSKEY = "bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919"
+CALLBACK_URL = "https://f2c8-154-159-237-129.ngrok-free.app/"
+MPESA_SHORTCODE_TYPE = 'paybill'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
